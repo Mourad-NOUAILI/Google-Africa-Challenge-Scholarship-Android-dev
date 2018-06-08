@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">SunShine</string>
 
+    <string name="error_forcasting">Can not get weather details.</string>
+
     <string name="action_settings">Settings</string>
+
+    <string name="action_share">Share</string>
+
+    <string name="action_show_map">Show location in map</string>
 
     <string name="list_pref_key" translatable="false">units</string>
     <string name="list_pref_label">Units</string>
@@ -16,4 +22,10 @@
     <string name="pref_location_label">Location</string>
     <string name="pref_location_key" translatable="false">loc</string>
     <string name="pref_location_default_value">Kebili</string>
+
+    <string name="icon_description">weather icon</string>
+    <string name="wind_speed">Wind speed:</string>
+    <string name="pressure">Pressure:</string>
+    <string name="precipitation">Precipitation:</string>
+    <string name="humidity">Humidity:</string>
 </resources>

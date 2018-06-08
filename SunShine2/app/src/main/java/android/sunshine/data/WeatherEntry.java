@@ -16,12 +16,15 @@ Precipitation volume for last 3 hours in mm
 
 package android.sunshine.data;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "weather_details")
-public class WeatherEntry {
+public class WeatherEntry implements Serializable {
 
     @PrimaryKey
     private long date_time;

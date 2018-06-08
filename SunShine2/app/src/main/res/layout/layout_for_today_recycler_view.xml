@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#5e9ee2">
+
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:background="#5e9ee1"/>
+
+    <ImageView
+        android:id="@+id/weather_forecast_imageview_in_recyclerview"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/weather_forecast_textview_in_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/weather_forecast_imageview_in_recyclerview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="date"/>
+
+
+    <TextView
+        android:id="@+id/descrption_textview_in_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintLeft_toLeftOf="@+id/weather_forecast_imageview_in_recyclerview"
+        app:layout_constraintRight_toRightOf="@+id/weather_forecast_imageview_in_recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/weather_forecast_imageview_in_recyclerview"
+        tools:text="description"/>
+
+
+    <TextView
+        android:id="@+id/max_temp_textview_in_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weather_forecast_imageview_in_recyclerview"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/weather_forecast_imageview_in_recyclerview"
+        tools:text="19"/>
+
+
+    <TextView
+        android:id="@+id/min_temp_textview_in_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/descrption_textview_in_recycler_view"
+        app:layout_constraintLeft_toLeftOf="@+id/max_temp_textview_in_recycler_view"
+        app:layout_constraintRight_toRightOf="@+id/max_temp_textview_in_recycler_view"
+        tools:text="0"/>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

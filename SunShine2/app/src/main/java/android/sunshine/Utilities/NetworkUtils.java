@@ -1,7 +1,10 @@
 package android.sunshine.Utilities;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.sunshine.MainActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -77,9 +80,29 @@ public class NetworkUtils {
 
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
         finally {connection.disconnect();
         }
-        return null;
+    }
+
+    public static Bitmap load_icon(String url_string){
+        URL url = null;
+        try {
+            url = new URL (url_string);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        Bitmap bitmap = null;
+        try {
+            bitmap = BitmapFactory.decodeStream(url.openStream());
+            return bitmap;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }

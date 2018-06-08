@@ -1,6 +1,7 @@
 package android.sunshine.Utilities;
 
 import android.content.Context;
+import android.sunshine.MainActivity;
 import android.sunshine.data.AppDataBase;
 import android.sunshine.data.WeatherEntry;
 import android.sunshine.data.WeatherDao;
@@ -23,6 +24,9 @@ public class JsonUtils {
 
     public static void get_weather_strings_from_json(Context context, String json_forecast)
             throws JSONException {
+
+        database = AppDataBase.get_instance(context);
+
         if (json_forecast == null)
             return;
         JSONObject forecast_json = new JSONObject(json_forecast);
@@ -34,14 +38,15 @@ public class JsonUtils {
                 case HttpURLConnection.HTTP_OK:
                     break;
                 case HttpURLConnection.HTTP_NOT_FOUND:
-                    String error_message = forecast_json.getString("message");
+                    database.weatherDao().delete_all();
                     return;
                 default:
+                    database.weatherDao().delete_all();
                     return;
             }
         }
 
-        database = AppDataBase.get_instance(context);
+
 
         JSONObject  city_forecast = forecast_json.getJSONObject("city");
         String city = city_forecast.getString("name");
@@ -87,6 +92,7 @@ public class JsonUtils {
 
 
             String date_time_txt = unix_epoch_time_to_human_time(date_time);
+
 
             //Create a new instance of the class e_details
             WeatherEntry a_day_details = new WeatherEntry(date_time, temp, temp_min, temp_max,
