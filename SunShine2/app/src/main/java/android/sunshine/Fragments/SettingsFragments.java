@@ -4,6 +4,7 @@ package android.sunshine.Fragments;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.sunshine.R;
+import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.EditTextPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -20,8 +21,10 @@ public class SettingsFragments extends PreferenceFragmentCompat
         int count = preferenceScreen.getPreferenceCount();
         for (int i = 0 ; i < count ; ++i){
             Preference p = preferenceScreen.getPreference(i);
-            String v = sharedPreferences.getString(p.getKey(), "");
-            set_preference_summary(p, v);
+            if (!(p instanceof CheckBoxPreference)) {
+                String v = sharedPreferences.getString(p.getKey(), "");
+                set_preference_summary(p, v);
+            }
         }
     }
 
@@ -42,8 +45,10 @@ public class SettingsFragments extends PreferenceFragmentCompat
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
         Preference preference = findPreference(s);
         if (preference != null){
-            String v = sharedPreferences.getString(preference.getKey(), "");
-            set_preference_summary(preference, v);
+            if (!(preference instanceof CheckBoxPreference)) {
+                String v = sharedPreferences.getString(preference.getKey(), "");
+                set_preference_summary(preference, v);
+            }
         }
     }
 

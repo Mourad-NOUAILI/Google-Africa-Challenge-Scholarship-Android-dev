@@ -90,13 +90,23 @@
             app:layout_constraintStart_toStartOf="@+id/a_day_max_temp_details_text_view"
             app:layout_constraintTop_toBottomOf="@+id/a_day_max_temp_details_text_view"
             tools:text="min" />
+
+        <!--<Button
+            android:id="@+id/button_test_noti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Button"
+            android:onClick="test_notification"
+            app:layout_constraintStart_toEndOf="@+id/a_day_description_details_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/a_day_min_temp_details_text_view" />-->
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:background="#5e9ee1"
+        android:background="@color/detail_accent_pane_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
@@ -109,6 +119,7 @@
             android:layout_marginTop="8dp"
             android:text="wind speed"
             android:textSize="20dp"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/a_day_pressure_details_text_view"
             app:layout_constraintTop_toTopOf="@+id/textView5" />
 
@@ -119,6 +130,7 @@
             android:layout_marginTop="8dp"
             android:text="pressure"
             android:textSize="20dp"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/a_day_humidity_details_text_view"
             app:layout_constraintTop_toTopOf="@+id/a_day_pressure_label_details_text_view" />
 
@@ -130,6 +142,7 @@
             android:layout_marginStart="8dp"
             android:text="rain"
             android:textSize="20dp"
+            android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/a_day_precipitation_label_details_text_view"
             app:layout_constraintTop_toTopOf="@+id/a_day_precipitation_label_details_text_view" />
@@ -141,6 +154,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textSize="20dp"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/a_day_precipitation_details_text_view"
             app:layout_constraintTop_toTopOf="@+id/a_day_humidity_label_details_text_view"
             tools:text="humidity" />
@@ -152,6 +166,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/detail_accent_label"
             android:text="Humidity:"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/a_day_pressure_label_details_text_view"
@@ -165,6 +181,8 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:text="Pressure:"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/detail_accent_label"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="@+id/a_day_humidity_label_details_text_view"
@@ -173,11 +191,13 @@
         <TextView
             android:id="@+id/a_day_precipitation_label_details_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="8dp"
             android:text="Precipitation:"
             android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/detail_accent_label"
             app:layout_constraintBottom_toTopOf="@+id/a_day_humidity_label_details_text_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -190,6 +210,8 @@
             android:layout_marginTop="16dp"
             android:text="Wind speed:"
             android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/detail_accent_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/a_day_pressure_label_details_text_view"
             app:layout_constraintTop_toBottomOf="@+id/a_day_pressure_label_details_text_view" />

@@ -29,18 +29,25 @@
                 android:value=".MainActivity"></meta-data>
         </activity>
 
+
+
+        <activity
+            android:label="@string/details_title_activity"
+            android:name=".ADayWeatherDetails"
+            ></activity>
+
         <service
             android:name=".Services.WeatherForcastingIntentService"
             android:exported="false">
+        </service>
 
-            <!--
+        <service
+            android:name=".Services.WeatherForcastFirebaseJobService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
             </intent-filter>
-            -->
         </service>
-
-        <activity android:name=".ADayWeatherDetails"></activity>
     </application>
 
 </manifest>

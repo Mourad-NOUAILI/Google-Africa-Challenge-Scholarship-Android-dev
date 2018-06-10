@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="use_today_layout">true</bool>
+
+    <bool name="pref_notofication_default_value" translatable="false">false</bool>
 </resources>

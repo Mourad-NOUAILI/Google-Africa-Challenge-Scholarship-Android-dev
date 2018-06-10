@@ -16,10 +16,10 @@ import com.firebase.jobdispatcher.Trigger;
 import java.util.concurrent.TimeUnit;
 
 public class ScheduleForcastingUtils {
-    private final static int INTERVAL_MINUTES = 1;
+    private final static int INTERVAL_HOURS = 3;
     private final static int INTERVAL_SECONDS =
-            (int) TimeUnit.MINUTES.toSeconds(INTERVAL_MINUTES);
-    private final static int SYNC_FLEXTIME_SECONDS = INTERVAL_SECONDS;
+            (int) TimeUnit.HOURS.toSeconds(INTERVAL_HOURS);
+    private final static int SYNC_FLEXTIME_SECONDS = INTERVAL_SECONDS / 3;
 
     private final static String JOB_TAG = "job-scheduling";
 
@@ -28,6 +28,7 @@ public class ScheduleForcastingUtils {
     synchronized public static void schedule_forcasting(@NonNull final Context context){
         if (job_initialized)
             return;
+
         Driver driver = new GooglePlayDriver(context);
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
         Job job_constraint = dispatcher.newJobBuilder()

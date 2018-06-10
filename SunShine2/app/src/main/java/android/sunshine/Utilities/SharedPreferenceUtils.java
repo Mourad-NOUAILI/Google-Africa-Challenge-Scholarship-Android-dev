@@ -42,4 +42,16 @@ public class SharedPreferenceUtils {
                 .equals(context.getString(R.string.pref_imperial_value));
     }
 
+    public static boolean notification_is_enabled(Context context){
+        SharedPreferences shared_preferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        String notification_key =
+                context.getString(R.string.pref_notofication_key);
+        boolean notification_default_value = context.getResources()
+                .getBoolean(R.bool.pref_notofication_default_value);
+
+        return shared_preferences.getBoolean(notification_key, notification_default_value);
+
+    }
+
 }

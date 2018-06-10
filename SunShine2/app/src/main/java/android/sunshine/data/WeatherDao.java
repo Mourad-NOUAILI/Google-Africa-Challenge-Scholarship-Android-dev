@@ -15,6 +15,9 @@ public interface WeatherDao {
     @Query("SELECT * FROM weather_details ORDER by date_time")
     LiveData<WeatherEntry[]> load_all_days();
 
+    @Query("SELECT * FROM weather_details WHERE date_time = :date_time")
+    WeatherEntry load_a_day(long date_time);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert_a_day(WeatherEntry day_details);
 

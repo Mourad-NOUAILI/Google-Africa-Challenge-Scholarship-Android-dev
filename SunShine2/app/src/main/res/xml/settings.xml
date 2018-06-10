@@ -12,4 +12,11 @@
         android:defaultValue="@string/pref_location_default_value"
         android:title="@string/pref_location_label"
         android:key="@string/pref_location_key"/>
+    <CheckBoxPreference
+        android:defaultValue="@bool/pref_notofication_default_value"
+        android:title="@string/pref_nottification_label"
+        android:key="@string/pref_notofication_key"
+        android:summaryOn="@string/pref_notification_enabled"
+        android:summaryOff="@string/pref_notification_not_enabled"/>
+        />
 </PreferenceScreen>

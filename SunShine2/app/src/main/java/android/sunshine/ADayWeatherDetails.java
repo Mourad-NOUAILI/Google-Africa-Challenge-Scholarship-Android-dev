@@ -14,8 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import android.sunshine.Utilities.NotificationUtils;
 
 public class ADayWeatherDetails extends AppCompatActivity {
     WeatherEntry detail = null;
@@ -143,4 +146,8 @@ public class ADayWeatherDetails extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /*public void test_notification(View v) {
+        NotificationUtils.notify_user_when_data_changed(this);
+    }*/
 }

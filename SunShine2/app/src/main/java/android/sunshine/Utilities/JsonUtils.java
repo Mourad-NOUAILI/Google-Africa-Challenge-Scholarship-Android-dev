@@ -38,10 +38,10 @@ public class JsonUtils {
                 case HttpURLConnection.HTTP_OK:
                     break;
                 case HttpURLConnection.HTTP_NOT_FOUND:
-                    database.weatherDao().delete_all();
+                    //database.weatherDao().delete_all();
                     return;
                 default:
-                    database.weatherDao().delete_all();
+                    //database.weatherDao().delete_all();
                     return;
             }
         }
@@ -100,7 +100,15 @@ public class JsonUtils {
                     date_time_txt, rain_3h, city, country, lat, lon);
             Log.e("JSON_FORCAST", a_day_details.getDate_time_txt());
 
-            database.weatherDao().insert_a_day(a_day_details);
+            WeatherEntry a_day_from_database = database.weatherDao().load_a_day(date_time);
+            if (a_day_from_database != null) {
+                if (!a_day_details.equals(a_day_from_database)){
+                    a_day_details.setDate_time(date_time);
+                    database.weatherDao().update_a_day(a_day_details);
+                }
+            }
+            else
+                database.weatherDao().insert_a_day(a_day_details);
         }
     }
 

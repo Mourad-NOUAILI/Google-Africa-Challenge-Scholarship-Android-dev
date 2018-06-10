@@ -25,11 +25,11 @@ public class WeatherForcastingIntentService extends IntentService {
         Context context = WeatherForcastingIntentService.this;
         URL url = NetworkUtils.build_url_bases_on_location_query(context);
         String json_string = NetworkUtils.get_response_from_url(url);
-        if (json_string == null) {
+        /*if (json_string == null) {
             AppDataBase database = AppDataBase.get_instance(context);
             database.weatherDao().delete_all();
             return;
-        }
+        }*/
         //Log.e("json_erreur", json_string);
         try {
             JsonUtils.get_weather_strings_from_json(this, json_string);
